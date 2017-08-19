@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity2"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#423752"
-    tools:context="kr.soen.moa.ui.activity.Main2Activity">
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_horizontal_ntb"
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-         />
+    >
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#00000000"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp">
 
-        <FrameLayout
-            android:id="@+id/wrapper_ntb_horizontal"
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:textColor="@color/btn_default_shadow"
+        app:pstsIndicatorColor="@color/tab_strip"
+        app:pstsIndicatorHeight="@dimen/tab_indicator_height"
+        app:pstsShouldExpand="true" />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager2"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnCreate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways">
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/btn_fab_margins"
+            android:layout_marginRight="@dimen/btn_fab_margins"
+            android:src="@drawable/ic_instagram_white"
+            app:borderWidth="0dp"
+            app:elevation="6dp"
+            app:pressedTranslationZ="12dp" />
+
+    </FrameLayout>
 
 
-        </FrameLayout>
 
-    </android.support.design.widget.AppBarLayout>
 
-    <View
-        android:id="@+id/mask"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_gravity="bottom"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
-
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

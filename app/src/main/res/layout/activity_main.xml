@@ -7,35 +7,35 @@
     android:orientation="vertical">
 
 
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
-            <com.astuetz.PagerSlidingTabStrip
+    <com.astuetz.PagerSlidingTabStrip
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/primary"
+                android:background="@color/white"
                 android:elevation="4dp"
-                android:textColor="@color/white"
+                android:textColor="@color/btn_default_shadow"
                 app:pstsIndicatorColor="@color/tab_strip"
                 app:pstsIndicatorHeight="@dimen/tab_indicator_height"
                 app:pstsShouldExpand="true" />
 
 
+
+
+    <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="0px"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/white" />
-
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/btnCreate"
             android:layout_width="wrap_content"
@@ -47,5 +47,9 @@
             app:borderWidth="0dp"
             app:elevation="6dp"
             app:pressedTranslationZ="12dp" />
+
+    </FrameLayout>
+
+
 
 </LinearLayout>

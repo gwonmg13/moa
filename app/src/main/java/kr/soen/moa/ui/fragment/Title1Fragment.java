@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import kr.soen.moa.R;
+import kr.soen.moa.ui.activity.GuideMainActivity;
 import kr.soen.moa.ui.activity.Main2Activity;
 
 /**
@@ -89,6 +90,13 @@ public class Title1Fragment extends Fragment implements View.OnClickListener{
                     @Override
                     public void onAnimationEnd(final View view) {
                         switch (view.getId()) {
+                            case R.id.button:
+                                startActivity(
+                                        new Intent(getActivity(), GuideMainActivity.class)
+
+                                );
+                                break;
+
                             case R.id.title_btn1:
 
                             case R.id.title_btn2:
@@ -98,11 +106,6 @@ public class Title1Fragment extends Fragment implements View.OnClickListener{
                                         new Intent(getActivity(), Main2Activity.class)
                                 );
                                 break;
-                            case R.id.button:
-                                startActivity(
-                                        new Intent(getActivity(), Main2Activity.class)
-
-                                );
 
                             default:
                                 break;
