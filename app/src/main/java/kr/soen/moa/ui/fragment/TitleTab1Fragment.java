@@ -1,15 +1,24 @@
 package kr.soen.moa.ui.fragment;
 
+import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import kr.soen.moa.R;
 import kr.soen.moa.ui.adapter.TitleListViewAdapter;
@@ -19,7 +28,7 @@ import kr.soen.moa.ui.data.TitleListViewItem;
  * Created by manggi on 2017. 8. 18..
  */
 
-public class TitleTab1Fragment extends ListFragment implements View.OnClickListener{
+public class TitleTab1Fragment extends ListFragment{
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_POSITION = "position";
@@ -29,6 +38,7 @@ public class TitleTab1Fragment extends ListFragment implements View.OnClickListe
     //fragment view controls
 
     TitleListViewAdapter adapter;
+
 
     public static TitleTab1Fragment newInstance(int position) {
 
@@ -44,17 +54,16 @@ public class TitleTab1Fragment extends ListFragment implements View.OnClickListe
 
     }
 
-    @Override
-    public void onClick(View view) {
-        position = getArguments().getInt(ARG_POSITION);
 
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+
+
         //Adapter 생성 및 Adapter 지정
         adapter = new TitleListViewAdapter();
+
         setListAdapter(adapter);
 
         //첫 번째 아이템 추가
@@ -75,10 +84,35 @@ public class TitleTab1Fragment extends ListFragment implements View.OnClickListe
         adapter.addItem("우산이 없는데 비가 내리면 어떻게 해야 비를 맞지 않고 집에 갈 수 있을까요?",30);
 
 
-
-
         return super.onCreateView(inflater,container,savedInstanceState);
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        //String chosenItem = (String)getListAdapter().getItem(position);
+        Log.d("hi","gege");
+
+        String item = (String)adapter.getItem(position);
+        Toast.makeText(getActivity(),item,Toast.LENGTH_SHORT).show();
+
+
+        l.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Toast.makeText(getActivity(),"hiih",Toast.LENGTH_SHORT).show();
+
+                return true;
+            }
+        });
+
+
+    }
 }

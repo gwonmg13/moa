@@ -50,7 +50,7 @@ public class BaseActivity extends AppCompatActivity{
         super.setContentView(layoutResId);
     }
 
-    //툴바 네비게이션 삼지창 표시
+    //툴바 네비게이션 메뉴바 표시
     protected void setupToolbar(){
         if(toolbar !=null){
             setSupportActionBar(toolbar);

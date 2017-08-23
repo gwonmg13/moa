@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -38,7 +39,7 @@ public class BaseDrawerActivity extends BaseActivity {
     @BindString(R.string.user_profile_photo)
     String profilePhoto;
 
-    private ImageView ivMenuUserProfilePhoto;
+    private TextView ivMenuUserProfilePhoto;
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
@@ -68,7 +69,7 @@ public class BaseDrawerActivity extends BaseActivity {
     private void setupHeader(){
 
         View headerView = vNavigation.getHeaderView(0);
-        ivMenuUserProfilePhoto = (ImageView)headerView.findViewById(R.id.ivMenuUserProfilePhoto);
+        ivMenuUserProfilePhoto = (TextView)headerView.findViewById(R.id.ivMenuUserProfilePhoto);
 
         //나의 프로필 클릭시 이동
         headerView.findViewById(R.id.vGlobalMenuHeader).setOnClickListener(new View.OnClickListener() {
@@ -83,8 +84,8 @@ public class BaseDrawerActivity extends BaseActivity {
                 .placeholder(R.drawable.img_circle_placeholder)
                 .resize(avatarSize, avatarSize)
                 .centerCrop()
-                .transform(new CircleTransformation())
-                .into(ivMenuUserProfilePhoto);
+                .transform(new CircleTransformation());
+               // .into(ivMenuUserProfilePhoto);
     }
 
     public void onGlobalMenuHeaderClick(final View v){
@@ -95,8 +96,8 @@ public class BaseDrawerActivity extends BaseActivity {
                 int[] startingLocation = new int[2];
                 v.getLocationOnScreen(startingLocation);
                 startingLocation[0] += v.getWidth()/2;
-//                Main2Activity.startUserProfileFromLocation(startingLocation,BaseDrawerActivity.this);
-//                overridePendingTransition(0,0)
+                MyPageActivity.startUserProfileFromLocation(startingLocation,BaseDrawerActivity.this);
+                overridePendingTransition(0,0);
             }
         },200);
     }

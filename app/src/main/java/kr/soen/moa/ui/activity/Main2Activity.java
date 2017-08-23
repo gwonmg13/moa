@@ -1,12 +1,16 @@
 package kr.soen.moa.ui.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.astuetz.PagerSlidingTabStrip;
 
@@ -40,12 +44,20 @@ public class Main2Activity extends BaseDrawerActivity {
         tabs2.setViewPager(pager2);
 
 
+
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return super.onCreateOptionsMenu(menu);
     }
+
+
+
+
+
 
     public class MyAdapter2 extends FragmentPagerAdapter {
 
@@ -61,6 +73,7 @@ public class Main2Activity extends BaseDrawerActivity {
 
             switch (position){
                 case 0:{
+
                     return TitleTab1Fragment.newInstance(position);
                 }
                 case 1:{
