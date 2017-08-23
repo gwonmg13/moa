@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@id/textView"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="#606060" />
+    <!--android:text="여러분이 살아가면서 겪었던 가장 슬픈 일은무엇인가요?\n그때 어떤 기분이 들었나요?\n그 슬픔은 어떻게 극복했나요?"-->
+</LinearLayout>

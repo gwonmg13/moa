@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="kr.soen.moa.ui.activity.StartingActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/moa2"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="모아로 실리콘밸리로 갑시다"/>
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="이메일로 가입하기"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginTop="110dp"
+        android:onClick="myClick"
+        android:background="@drawable/buttonshape"/>
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="로그인"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:onClick="myClick"
+        android:background="@drawable/buttonshape" />
+
+    <TextView
+        android:id="@+id/account_forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myClick"
+        android:layout_marginTop="80dp"
+        />
+
+</LinearLayout>

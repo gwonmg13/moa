@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="kr.soen.moa.ui.activity.GuideMainActivity">
-
+    tools:context="kr.soen.moa.ui.activity.I_GuideMainActivity">
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
@@ -31,7 +30,7 @@
             android:layout_margin="20dp"
             android:background="@drawable/category1_border"
             android:gravity="center"
-           >
+            >
 
             <TextView
                 android:textAlignment="center"
@@ -52,19 +51,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:id="@+id/guide1"
+                android:id="@+id/i_guide1"
                 android:onClick="myClick"
                 android:text="참고 사항"
                 android:textColor="@color/white"
                 android:background="@drawable/category1_guide"
-            />
+                />
             <Button
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:text="활용법"
-                android:id="@+id/guide2"
+                android:id="@+id/i_guide2"
                 android:onClick="myClick"
                 android:textColor="@color/white"
                 android:background="@drawable/category1_guide"
@@ -74,9 +73,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:id="@+id/guide3"
+                android:id="@+id/i_guide3"
                 android:onClick="myClick"
-                android:text="아이가 어떻게 성장하나요?"
+                android:text="아이가 어떤 지식을 얻나요?"
                 android:textColor="@color/white"
                 android:background="@drawable/category1_guide"
                 />

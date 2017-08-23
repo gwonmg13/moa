@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="kr.soen.moa.ui.activity.Guide1Activity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/moa4"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/category1_border"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="1. 대화 콘텐츠들은 해외 유명 창의적 글감 기업 826Valencia에서 연구한 ‘창의적 글감 642’에서 일부 발췌했어요." />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="2. 각 대화별 순서는 없어요. 하나씩 답을 해도 되고 아무 대화나 자유롭게 눌러 플레이하여 그날 화두로 삼아도 된답니다.
+방식은 자유예요." />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="3. 다양한 목소리로 녹음하여 제공하기에 아이들이 더 재밌게 느끼도록 준비했답니다." />
+    </LinearLayout>
+</LinearLayout>

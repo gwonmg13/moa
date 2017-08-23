@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="kr.soen.moa.ui.activity.Guide3Activity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/moa4"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/category1_border"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text=" 1. 대화를 통해 자연스레 좌뇌와 우뇌가 함께 발달
+:: 상상력과 감수성을 샘솟게 하는 질문과 대화는 우뇌를 자극하고, 논리적 사고력을 키우는 질문과 대화는 좌뇌를 발달시켜요. 질문을 함께하고 대화하며 답하다 보면 어느새 좌뇌와 우뇌가 균형 있게 발달하면서 창의력이 자라요." />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="2. 창의적인 시각으로 세상을 바라보기
+:: 대화를 하다보면 외계인이 되보기도하고, 벌레나 선풍기의 입장이 되보기도 해요. 때론 영화의 주인공이 되기도 하죠. 또 물고기나"/>
+
+    </LinearLayout>
+
+</LinearLayout>

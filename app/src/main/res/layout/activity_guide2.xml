@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="kr.soen.moa.ui.activity.Guide2Activity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/moa4"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/category1_border"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="1. 생각나는 대로 마구마구 대화하고, 기록해보세요.
+:: 처음부터 멋지고 긴 대화는 어려울 수도 있어요. 정답은 없답니다. 어려운 질문이 있을 수도 있어요. 그럴때는 과감하게 패~스 해보세요 ^^" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="2. 여러분만 알고 있는, 여러분만의 이야기를 나누고 기록하세요.
+:: 여러분이 좋아하는 것, 여러분만 알고 있는 긴밀한 대화. 나누다보면 여러분도 몰랐던 서로를 알게 될 거예요."/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="3. 대화에 이어서 기록하기까지" />
+    </LinearLayout>
+</LinearLayout>

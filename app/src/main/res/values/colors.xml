@@ -4,6 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="frag1">#1E88E5</color>
+    <color name="frag2">#FDD835</color>
+    <color name="frag3">#8E24AA</color>
+
+
     <color name="style_color_primary">#2d5d82</color>
     <color name="style_color_primary_dark">#21425d</color>
     <color name="style_color_accent">#01bcd5</color>

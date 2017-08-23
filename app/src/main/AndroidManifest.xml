@@ -23,9 +23,66 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activity.SignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+
+        </activity>
+        <activity
+            android:name=".ui.activity.random_play"
+            android:theme="@style/AppTheme.NoActionBar" >
+
+        </activity>
+
+        <activity
+            android:name=".ui.activity.startpage"
+            android:theme="@style/AppTheme.NoActionBar" >
+
+        </activity>
+        <activity
+            android:name=".ui.activity.TalkActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+
+
+        </activity>
+        <activity
+            android:name=".ui.activity.StartingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ui.activity.Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.activity.GuideMainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.Guide1Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.Guide2Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.Guide3Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.I_GuideMainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.I_Guide1Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.I_Guide2Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.I_Guide3Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.MyPageActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +90,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.Main2Activity"></activity>
+
     </application>
 
 </manifest>
