@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
+    android:background="@color/white"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/category1_border"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/comment_regdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+            <TextView
+                android:layout_margin="7dp"
+                android:id="@+id/title_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="어느날 눈이 보이지 않는 친구가 우리 동네에 이사를 오게 되었어요!" />
+
+
+        </LinearLayout>
+        <ImageButton
+            android:layout_gravity="center"
+            android:id="@+id/btnComments"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="onClick"
+            android:background="@android:color/transparent"
+            android:src="@drawable/icon_08" />
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearComment1"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:visibility="gone"
+            android:background="@drawable/category1_border"
+            >
+                <LinearLayout
+                    android:id="@+id/editok_layout"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/comment_edit"
+                        android:layout_width="match_parent"
+                        android:hint="나눈 대화를 기록해보세요"
+                        android:textSize="13dp"
+                        android:textColorHint="#c1c0c0"
+                        android:background="@null"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+                        android:ems="10"
+                        android:lines="5"
+                        android:gravity="center"
+                        android:scrollHorizontally="false"
+                        android:minWidth="10.0dip"
+                        android:maxWidth="5.0dip"
+                        android:inputType="textMultiLine"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="80dp" />
+                    <TextView
+                        android:id="@+id/content_edit_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#c1c0c0"
+                        android:text="확인"/>
+                </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearComment2"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:visibility="gone"
+            android:background="@drawable/category1_border">
+
+            <LinearLayout
+                android:id="@+id/modify_layout"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/content_modify"
+                    android:textSize="13dp"
+                    android:gravity="center"
+                    android:text="test"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp" />
+                <TextView
+                    android:id="@+id/content_modify_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#c1c0c0"
+                    android:text="수정"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>
