@@ -29,7 +29,7 @@ public class MyPageViewAdapter extends BaseAdapter  {
    // private Context context;
     // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
     private ArrayList<MyPageListViewItem> myPageItemList = new ArrayList<MyPageListViewItem>();
-    boolean ChechComments = FALSE;
+    String ChechComments = null;
     LayoutInflater inflater;
 
 
@@ -73,6 +73,7 @@ public class MyPageViewAdapter extends BaseAdapter  {
         final Context context = parent.getContext();
 
         if(convertView==null){
+
             holder = new ViewHolder();
             inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.mypage_listview_item,parent,false);
@@ -80,10 +81,11 @@ public class MyPageViewAdapter extends BaseAdapter  {
             //화면에 표시될 View(Layout이 inflate된) 위젯에 대한 참조 획득
 
             holder.comment_regdate = (TextView)convertView.findViewById(R.id.comment_regdate);
-            holder.comment_content = (TextView)convertView.findViewById(R.id.title_content);
-            holder.btn_Comment = (ImageView)convertView.findViewById(R.id.btnLike);
+            holder.comment_content = (TextView)convertView.findViewById(R.id.comment_content);
+            holder.btn_Comment = (ImageView)convertView.findViewById(R.id.btnComments);
 
             convertView.setTag(holder);
+
         }else{
             holder = (ViewHolder)convertView.getTag();
         }
@@ -92,8 +94,8 @@ public class MyPageViewAdapter extends BaseAdapter  {
         /**
          * 댓글 보여주는 프레그먼트 생성
          * */
-        final LinearLayout linearComment = (LinearLayout)convertView.findViewById(R.id.linearComment);
-
+        final LinearLayout linearComment1 = (LinearLayout)convertView.findViewById(R.id.linearComment1);
+        final LinearLayout linearComment2 = (LinearLayout)convertView.findViewById(R.id.linearComment2);
 
         ViewPager pager4 = (ViewPager)convertView.findViewById(R.id.pager4);
 
@@ -112,30 +114,20 @@ public class MyPageViewAdapter extends BaseAdapter  {
 //=
         MyPageListViewItem myPageListViewItem = myPageItemList.get(position);
         holder.comment_regdate.setText(myPageListViewItem.getReg_date());
-        holder.comment_content.setText(myPageListViewItem.getComment());
+        holder.comment_content.setText(myPageListViewItem.getTitle());
         holder.btn_Comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"좋아효>.<",Toast.LENGTH_SHORT).show();
+                if (ChechComments == null) {
+                    linearComment1.setVisibility(View.VISIBLE);
+
+                } else {
+                    linearComment2.setVisibility(View.VISIBLE);
+                }
             }
+
         });
 
-//
-//        holder.btnComments.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if(ChechComments==FALSE){
-//                    linearComment.setVisibility(View.VISIBLE);
-//                    ChechComments=TRUE;
-//
-//                }else if(ChechComments==TRUE){
-//                    linearComment.setVisibility(View.GONE);
-//                    ChechComments=FALSE;
-//
-//
-//                }
-//            }
-//        });
         return convertView;
     }
 
@@ -146,9 +138,7 @@ public class MyPageViewAdapter extends BaseAdapter  {
 
         item.setReg_date(comment_regdate);
         item.setTitle(comment_content);
-
-
-     //   titleListItemList.add(item);
+        myPageItemList.add(item);
     }
 
 

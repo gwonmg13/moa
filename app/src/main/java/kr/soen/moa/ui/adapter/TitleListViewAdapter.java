@@ -2,6 +2,7 @@ package kr.soen.moa.ui.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -17,6 +18,8 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
+
+import com.roughike.bottombar.BottomBar;
 
 import java.util.ArrayList;
 
@@ -41,10 +44,12 @@ public class TitleListViewAdapter extends BaseAdapter  {
     private ArrayList<TitleListViewItem> titleListItemList = new ArrayList<TitleListViewItem>();
     boolean ChechComments = FALSE;
     LayoutInflater inflater;
+    TitleTab1Fragment context;
 
 
-    public TitleListViewAdapter() {
-
+    public TitleListViewAdapter(ArrayList<TitleListViewItem> titleListItemList, TitleTab1Fragment context) {
+            this.titleListItemList = titleListItemList;
+            this.context = context;
     }
 
     private class ViewHolder{
@@ -112,7 +117,7 @@ public class TitleListViewAdapter extends BaseAdapter  {
          * 댓글 보여주는 프레그먼트 생성
          * */
         final LinearLayout linearComment = (LinearLayout)convertView.findViewById(R.id.linearComment);
-
+        LinearLayout linear = (LinearLayout)convertView.findViewById(R.id.linear);
 //        ImageView btnLike = (ImageView)convertView.findViewById(R.id.btnLike);
 //        ImageView btnComments = (ImageView)convertView.findViewById(R.id.btnComments);
 
@@ -155,20 +160,18 @@ public class TitleListViewAdapter extends BaseAdapter  {
                 }
             }
         });
+        if(titleListItemList.get(position).getChecked()==true){
+            linear.setBackgroundColor(Color.argb(255, 199, 227, 250));
+        }else{
+            linear.setBackgroundColor(Color.argb(0, 0, 0, 0));
+        }
         return convertView;
     }
 
 
     // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-    public void addItem(String titleContent, int tsLikesCounter) {
-        TitleListViewItem item = new TitleListViewItem();
-
-        item.setContent(titleContent);
-        item.setLikeNum(tsLikesCounter);
 
 
-        titleListItemList.add(item);
-    }
 
 
 

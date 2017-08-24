@@ -1,102 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mypage"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context="kr.soen.moa.ui.activity.MyPageActivity">
+    >
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/content"
-        android:orientation="vertical"
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rvUserProfile"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:textColor="@color/btn_default_shadow"
+        app:pstsIndicatorColor="@color/tab_strip"
+        app:pstsIndicatorHeight="@dimen/tab_indicator_height"
+        app:pstsShouldExpand="true" />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            >
-
-
-            <android.support.design.widget.CollapsingToolbarLayout
-                android:id="@+id/collapsing_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:contentScrim="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
-                <LinearLayout
-                    android:id="@+id/vUserProfileRoot"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/colorPrimary"
-                    android:clipChildren="false"
-                    android:clipToPadding="false"
-                    android:orientation="vertical"
-                    android:paddingBottom="24dp"
-                    android:paddingLeft="24dp"
-                    android:paddingRight="24dp"
-                    android:paddingTop="100dp"
-                    app:layout_collapseMode="parallax">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:clipChildren="false">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Gwon Min Gyeong"
-                            android:textColor="#ffffff"
-                            android:textSize="24sp" />
-
-                    </LinearLayout>
-                </LinearLayout>
-                <include
-                    android:id="@+id/toolbar"
-                    layout="@layout/toolbar" />
-            </android.support.design.widget.CollapsingToolbarLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="480dp">
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/pager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@android:color/white" />
-
-                <com.astuetz.PagerSlidingTabStrip
-                    android:id="@+id/tlUserProfileTabs"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@color/white"
-                    android:elevation="4dp"
-                    android:textColor="@color/btn_default_shadow"
-                    app:pstsIndicatorColor="@color/tab_strip"
-                    app:pstsIndicatorHeight="@dimen/tab_indicator_height"
-                    app:pstsShouldExpand="true" />
-
-
-            </FrameLayout>
-
-        </android.support.design.widget.AppBarLayout>
-
+            android:layout_weight="1"
+            android:background="@android:color/white" />
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/btnCreate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
             android:layout_gravity="bottom|right"
             android:layout_marginBottom="@dimen/btn_fab_margins"
             android:layout_marginRight="@dimen/btn_fab_margins"
@@ -104,5 +44,10 @@
             app:borderWidth="0dp"
             app:elevation="6dp"
             app:pressedTranslationZ="12dp" />
-    </android.support.design.widget.CoordinatorLayout>
-</RelativeLayout>
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

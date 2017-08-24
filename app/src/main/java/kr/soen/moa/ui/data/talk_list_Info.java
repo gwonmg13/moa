@@ -1,16 +1,16 @@
-package kr.soen.moa.ui.activity;
+package kr.soen.moa.ui.data;
 
 /**
  * Created by hong on 2017-08-19.
  */
 
 public class talk_list_Info {
-    int id;
+    public int id;
     public String text;
-    public String file;
+    public int file;
     public String guide = null;
     public boolean check = false;
-    talk_list_Info(int id, String text, String file, String guide, boolean check){
+    public talk_list_Info(int id, String text, int file, String guide, boolean check){
         this.id = id;
         this.text = text;
         this.file = file;

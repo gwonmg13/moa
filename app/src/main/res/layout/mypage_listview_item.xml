@@ -21,7 +21,7 @@
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:orientation="vertical"
             android:gravity="center">
             <TextView
@@ -30,19 +30,19 @@
                 android:layout_height="wrap_content"
                 android:text="TextView" />
             <TextView
-                android:layout_margin="7dp"
-                android:id="@+id/title_content"
-                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:id="@+id/comment_content"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="어느날 눈이 보이지 않는 친구가 우리 동네에 이사를 오게 되었어요!" />
 
 
         </LinearLayout>
-        <ImageButton
+        <ImageView
             android:layout_gravity="center"
             android:id="@+id/btnComments"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:onClick="onClick"
             android:background="@android:color/transparent"
             android:src="@drawable/icon_08" />
@@ -58,7 +58,6 @@
             android:orientation="vertical"
             android:layout_margin="20dp"
             android:visibility="gone"
-            android:background="@drawable/category1_border"
             >
                 <LinearLayout
                     android:id="@+id/editok_layout"
@@ -99,8 +98,7 @@
             android:layout_height="130dp"
             android:orientation="vertical"
             android:layout_margin="20dp"
-            android:visibility="gone"
-            android:background="@drawable/category1_border">
+            android:visibility="gone">
 
             <LinearLayout
                 android:id="@+id/modify_layout"

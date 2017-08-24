@@ -1,5 +1,6 @@
 package kr.soen.moa.ui.activity;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.NavigationView;
@@ -90,15 +91,18 @@ public class BaseDrawerActivity extends BaseActivity {
 
     public void onGlobalMenuHeaderClick(final View v){
         drawerLayout.closeDrawer(Gravity.LEFT);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                int[] startingLocation = new int[2];
-                v.getLocationOnScreen(startingLocation);
-                startingLocation[0] += v.getWidth()/2;
-                MyPageActivity.startUserProfileFromLocation(startingLocation,BaseDrawerActivity.this);
-                overridePendingTransition(0,0);
-            }
-        },200);
+
+        Intent intent = new Intent(getApplication(), MyPageActivity.class);
+        startActivity(intent);
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                int[] startingLocation = new int[2];
+//                v.getLocationOnScreen(startingLocation);
+//                startingLocation[0] += v.getWidth()/2;
+//                MyPageActivity.startUserProfileFromLocation(startingLocation,BaseDrawerActivity.this);
+//                overridePendingTransition(0,0);
+//            }
+//        },200);
     }
 }

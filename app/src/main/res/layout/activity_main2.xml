@@ -44,8 +44,16 @@
             app:borderWidth="0dp"
             app:elevation="6dp"
             app:pressedTranslationZ="12dp" />
-
+        <com.roughike.bottombar.BottomBar
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            app:bb_tabXmlResource="@xml/bottombar"
+            />
     </FrameLayout>
+
 
 
 
